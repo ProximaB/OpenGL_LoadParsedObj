@@ -7,7 +7,8 @@
 #include <math.h>               // Define for sqrt
 #include <stdio.h>
 #include "resource.h"           // About box resource identifiers.
-
+#include "DemoLoadVertexsFromArray_1.h"
+#include "LoaderVertexsFromFile.h"
 
 #define glRGB(x, y, z)  glColor3ub((GLubyte)x, (GLubyte)y, (GLubyte)z)
 #define BITMAP_ID 0x4D42        // identyfikator formatu BMP
@@ -624,104 +625,17 @@ void robot(double d1, double d2, double d3)
 }
 
 
-void Blender2() {
+///////////////////////////////////////// Create Instance Of Objects //////////////////////////////////////////////////
 
-	GLfloat vertices[][3] = {
-		{ 1, -1, -1 },{ 1, -1, 1 },{ -1, -1, 1 },{ -1, -1, -1 },{ 1, 1, -1 },{ 0.999999, 1, 1.000001 },{ -1, 1, 1 },{ -1, 1, -1 },
-	};
+DemoLoadVertexsFromArray_1 LoadFromArray = DemoLoadVertexsFromArray_1();
+LoadervertexsFromFile verLoader = LoadervertexsFromFile("Vertex.txt", 24, "Faces.txt", 36 );
+LoadervertexsFromFile verLoader2 = LoadervertexsFromFile("VertexBlender.txt", 24,  "FacesBlender.txt", 36);
+LoadervertexsFromFile verLoader3 = LoadervertexsFromFile("VertexBlender.txt", 24, "FacesBlender.txt", 36);
 
-	GLint indicies[] = {
-		5, 1, 4, 5, 4, 8, 3, 7, 8, 3, 8, 4, 2, 6, 3, 6, 7, 3, 1, 5, 2, 5, 6, 2, 5, 8, 6, 8, 7, 6, 1, 2, 3, 1, 3, 4,
-	};
-
-	GLint rozmiar = sizeof(indicies) / sizeof(*indicies);
-
-	glBegin(GL_TRIANGLES);
-	for (int i = 0; i < rozmiar; i++) {
-		glVertex3fv(vertices[indicies[i] - 1]);
-	}
-	glEnd();
-}
-
-void Blender1() {
-	GLfloat _vertices[] = { 1, -1, -1, 1, -1, 1, -1, -1, 1, -1, -1, -1, 1, 1, -1, 0.999999, 1, 1.000001, -1, 1, 1, -1, 1, -1 };
-	GLfloat test[] = { 100, 101, 111, 200, 201, 222, 300, 301, 302, 400, 401, 402, 500, 501, 600, 601, 602, 700, 701, 702, 800, 801, 802, 900 };
-
-	GLint indicies[] = {
-		5, 1, 4, 5, 4, 8, 3, 7, 8, 3, 8, 4, 2, 6, 3, 6, 7, 3, 1, 5, 2, 5, 6, 2, 5, 8, 6, 8, 7, 6, 1, 2, 3, 1, 3, 4,
-	};
-
-	glBegin(GL_TRIANGLES);
-	for (int i = 0; i < 36-3; i++) {
-		glVertex3f(_vertices[(indicies[i] - 1) * 3], _vertices[(indicies[i] - 1) * 3 + 1], _vertices[(indicies[i] - 1) * 3 + 2]);
-		std::cout << "indicies: " << i << "verticies: " << _vertices[(indicies[i] + ((indicies[i] - 1) * 3) - 1)];
-	}
-	glEnd();
-}
-
-static BOOL setUp = 0;
-
-const int ARRAY_SIZE = 36;
-int indicies2[ARRAY_SIZE];
-
-const int _ARRAY_SIZE = 24;
-float vertices2[ARRAY_SIZE];
-
-void Blender0() {
-
-	if (setUp == 0)
-	{
-		int count = 0;
-		std::ifstream inputFile;
-
-		inputFile.open("Faces.txt");
-
-		if (inputFile.is_open()) {
-			std::cout << "Otworzono plik Faces.txt";
-		}
-
-		while (count < ARRAY_SIZE && inputFile >> indicies2[count]) {
-			count++;
-		}
-
-		inputFile.close();
-
-		int _count = 0;
-
-		std::ifstream _inputFile;
-
-		_inputFile.open("Vertex.txt");
-
-		if (inputFile.is_open()) {
-			std::cout << "Otworzono plik Vertex.txt";
-		}
-
-
-		while (_count < _ARRAY_SIZE && _inputFile >> vertices2[_count]) {
-			_count++;
-		}
-
-		_inputFile.close();
-
-		setUp = 1;
-	}
-
-	GLint rozmiar = sizeof(indicies2) / sizeof(*indicies2);
-
-	glBegin(GL_TRIANGLES);
-	for (int i = 0; i < rozmiar - 3; i++) {
-		glVertex3f(vertices2[(indicies2[i] - 1) * 3], vertices2[(indicies2[i] - 1) * 3 + 1], vertices2[(indicies2[i] - 1) * 3 + 2]);
-		std::cout << "indicies: " << i << "verticies: " << vertices2[(indicies2[i] + ((indicies2[i] - 1) * 3) - 1)];
-	}
-	glEnd();
-}
 
 // Called to draw scene
 void RenderScene(void)
 {
-	
-	//float normal[3];  // Storeage for calculated surface normal
-
 	// Clear the window with current clearing color
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -734,43 +648,45 @@ void RenderScene(void)
 	// MIEJSCE NA KOD OPENGL DO TWORZENIA WLASNYCH SCEN:           //
 	/////////////////////////////////////////////////////////////////
 
-	//Sposób na odróŸnienie "przedniej" i "tylniej" œciany wielok¹ta:
-
-
 
 	//Uzyskanie siatki:
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	//glPolygonMode(GL_BACK,GL_LINE);
 
-	//Wyrysowanie prostokata
-	//szescian();
-	//walec(40.0,50.0);
-	//ramie(40,30,10,60);
-	//petla();
-	//szesciokat();
-	//stozek(30.0,60.0);
-	//robot(2, 2, 2);
+
 
 	glRotatef(rot3, 0.0f, 0.0f, 0.5f);
 	glRotatef(-rot2, 0.0f, 0.0f, 0.5f);
+
 	glPushMatrix();
-	glTranslated(0, 2, 2);
-	glRotatef(rot1, 0.0f, 0.0f, 0.5f);
-	Blender1();
+		glTranslated(0, 2, 2);
+		glRotatef(rot1, 0.0f, 0.0f, 0.5f);
+		//LoadFromArray.LoadType1();
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslated(0, -2, -2);
-	glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-	Blender2();
-	//glPopMatrix();
-
-	//glPushMatrix();
-	glTranslated(0, -2, -2);
-	glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-	Blender0();
+		glTranslated(0, -2, -2);
+		glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+		//LoadFromArray.LoadType2();
 	glPopMatrix();
 
+	glPushMatrix();
+		glTranslated(0, -4, -4);
+		glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+		verLoader.Draw();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(0, 4, 4);
+	glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+	verLoader2.Draw();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(-3, -2, -1);
+	glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+	verLoader3.Draw();
+	glPopMatrix();
 
 	/////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////

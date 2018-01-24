@@ -137,13 +137,17 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DemoLoadVertexsFromArray_1.cpp" />
     <ClCompile Include="Gl_template1.c" />
     <ClCompile Include="Gl_template.cpp" />
+    <ClCompile Include="LoaderVertexsFromFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="RESOURCE.RC" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DemoLoadVertexsFromArray_1.h" />
+    <ClInclude Include="LoaderVertexsFromFile.h" />
     <ClInclude Include="RESOURCE.H" />
   </ItemGroup>
   <ItemGroup>
@@ -158,7 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Faces.txt" />
+    <Text Include="FacesBlender.txt" />
     <Text Include="Vertex.txt" />
+    <Text Include="VertexBlender.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

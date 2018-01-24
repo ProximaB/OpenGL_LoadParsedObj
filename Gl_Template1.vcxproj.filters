@@ -21,6 +21,12 @@
     <ClCompile Include="Gl_template.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LoaderVertexsFromFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DemoLoadVertexsFromArray_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="RESOURCE.RC">
@@ -29,6 +35,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RESOURCE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoaderVertexsFromFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoLoadVertexsFromArray_1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -61,5 +73,7 @@
   <ItemGroup>
     <Text Include="Faces.txt" />
     <Text Include="Vertex.txt" />
+    <Text Include="FacesBlender.txt" />
+    <Text Include="VertexBlender.txt" />
   </ItemGroup>
 </Project>

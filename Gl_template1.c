@@ -15,6 +15,7 @@
 //// Color Palette handle
 //HPALETTE hPalette = NULL;
 //
+
 //// Application name and instance storeage
 //static LPCTSTR lpszAppName = "GL Template";
 //static HINSTANCE hInstance;
