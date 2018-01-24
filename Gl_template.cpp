@@ -35,7 +35,7 @@ BITMAPINFOHEADER    bitmapInfoHeader;   // nag³ówek obrazu
 unsigned char*      bitmapData;         // dane tekstury
 unsigned int        texture[2];         // obiekt tekstury
 
-double rot1, rot2, rot3;
+double rot1, rot2, rot3, rotConst;
 
 
 // Declaration for Window procedure
@@ -108,7 +108,7 @@ void calcNormal(float v[3][3], float out[3])
 // Change viewing volume and viewport.  Called when window is resized
 void ChangeSize(GLsizei w, GLsizei h)
 {
-	GLfloat nRange = 10.0f; //ROZMIAR
+	GLfloat nRange = 6.0f; //ROZMIAR
 	GLfloat fAspect;
 	// Prevent a divide by zero
 	if (h == 0)
@@ -636,11 +636,12 @@ LoadervertexsFromFile ROBOT3 = LoadervertexsFromFile("ROBOT3Vertex.txt", 216, "R
 LoadervertexsFromFile ROBOT4 = LoadervertexsFromFile("ROBOT4Vertex.txt", 333, "ROBOT4Faces.txt", 654);
 LoadervertexsFromFile ROBOT5 = LoadervertexsFromFile("ROBOT5Vertex.txt", 573, "ROBOT5Faces.txt", 1074);
 
-
-
-
-
-
+LoadervertexsFromFile ZROBOT0 = LoadervertexsFromFile("ZROBOT0Vertex.txt", 453, "ZROBOT0Faces.txt", 909);
+LoadervertexsFromFile ZROBOT1 = LoadervertexsFromFile("ZROBOT1Vertex.txt", 1035, "ZROBOT1Faces.txt", 2202);
+LoadervertexsFromFile ZROBOT2 = LoadervertexsFromFile("ZROBOT2Vertex.txt", 606, "ZROBOT2Faces.txt", 1236);
+LoadervertexsFromFile ZROBOT3 = LoadervertexsFromFile("ZROBOT3Vertex.txt", 216, "ZROBOT3Faces.txt", 420);
+LoadervertexsFromFile ZROBOT4 = LoadervertexsFromFile("ZROBOT4Vertex.txt", 333, "ZROBOT4Faces.txt", 654);
+LoadervertexsFromFile ZROBOT5 = LoadervertexsFromFile("ZROBOT5Vertex.txt", 573, "ZROBOT5Faces.txt", 1074);
 
 // Called to draw scene
 void RenderScene(void)
@@ -650,9 +651,10 @@ void RenderScene(void)
 
 	// Save the matrix state and do the rotations
 	glPushMatrix();
-	glRotatef(xRot, 1.0f, 0.0f, 0.0f);
-	glRotatef(yRot, 0.0f, 1.0f, 0.0f);
-
+		glTranslated(0, -5, 0);
+		glRotatef(xRot, 1.0f, 0.0f, 0.0f);
+		glRotatef(yRot, 0.0f, 1.0f, 0.0f);
+	
 	/////////////////////////////////////////////////////////////////
 	// MIEJSCE NA KOD OPENGL DO TWORZENIA WLASNYCH SCEN:           //
 	/////////////////////////////////////////////////////////////////
@@ -662,26 +664,27 @@ void RenderScene(void)
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	//glPolygonMode(GL_BACK,GL_LINE);
 
-
-
-	glRotatef(rot3, 0.0f, 0.0f, 0.5f);
-	glRotatef(-rot2, 0.0f, 0.0f, 0.5f);
+	glRotated(35, 0, 0, 0);
 
 	glPushMatrix();
-		glTranslated(0, 2, 2);
-		glRotatef(rot1, 0.0f, 0.0f, 0.5f);
-		//LoadFromArray.LoadType1();
+		glTranslated(-5, 4.0f, -2.0f);
+		glRotatef(rotConst, 0.0f, 0.5f, 0.5f);
+		glPushMatrix();
+			glTranslated(-5, 2, 2);
+			glRotatef(rot1, 0.0f, 0.0f, 0.5f);
+			LoadFromArray.LoadType1();
+		glPopMatrix();
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslated(0, -2, -2);
-		glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-		//LoadFromArray.LoadType2();
+		glTranslated(5, -4, -3);
+		glRotatef(rot3, 0.0f, 0.0f, 0.5f);
+		LoadFromArray.LoadType2();
 	glPopMatrix();
 
 	glPushMatrix();
 		glTranslated(0, -4, -4);
-		glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+		glRotatef(rot1, 0.0f, 0.0f, 0.5f);
 		verLoader.Draw();
 	glPopMatrix();
 
@@ -691,43 +694,59 @@ void RenderScene(void)
 	verLoader2.Draw();
 	glPopMatrix();
 
-	/////////////////////////////////////////////////ROBOT
-	glPushMatrix();
-	glTranslated(-3, -2, -1);
-	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-	ROBOT1.Draw();
-	glPopMatrix();
+	///////////////////////////////////////////////////////////ROBOT
+	//glPushMatrix();
+	//
+	//ROBOT1.Draw();
 
-	glPushMatrix();
-	glTranslated(-3, -2, -1);
-	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-	ROBOT2.Draw();
-	glPopMatrix();
+	//glPushMatrix();
+	//glTranslatef(2, 2, 0.0); // 3. Translate to the object's position.
 
-	glPushMatrix();
-	glTranslated(-3, -2, -1);
-	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-	ROBOT3.Draw();
-	glPopMatrix();
+	//glRotatef(rot1, 0.0, 0.0, 1.0); // 2. Rotate the object.
 
-	glPushMatrix();
-	glTranslated(-3, -2, -1);
-	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-	ROBOT4.Draw();
-	glPopMatrix();
+	//glTranslatef(-2, -2, 0.0); // 1. Translate to the origin.
+	//glPopMatrix();
 
-	glPushMatrix();
-	glTranslated(-3, -2, -1);
-	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-	ROBOT5.Draw();
-	glPopMatrix();
+	//ROBOT2.Draw();
 
+	//ROBOT3.Draw();
+
+	//ROBOT4.Draw();
+
+	//ROBOT5.Draw();
+
+	//glPopMatrix();
 	/////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////
+	glPushMatrix();
+
+	ZROBOT0.Draw();
+	glTranslatef(0, 0.3, 0);
+	glRotatef(rotConst, 0, 1, 0);
+	/////////////////////////////// OBROT  Y
+	ZROBOT1.Draw();
+
+	glTranslatef(+1.4, 1.8, 0);
+	glRotatef(-40, 0, 0, 1); //ROtacja X
+	ZROBOT2.Draw();
+
+	glTranslatef(-5.9, 0.1, 1);
+	glRotatef(+40, 0, 0, 1); //ROtacja X
+	ZROBOT3.Draw();
+
+	glTranslatef(+4.2, 0.8, -1.3);
+	glRotatef(+40, 1, 0, 0); //ROtacja X
+	ZROBOT4.Draw();
+
+	glTranslated(2.5, 0, 1.3);
+	glRotated(90, 0, 0, 1); //Rotacja X
+	ZROBOT5.Draw();
+
 	glPopMatrix();
+	/////////////////////////////////////////////////////////////////
+
 	glMatrixMode(GL_MODELVIEW);
-
+	glPopMatrix();
 	// Flush drawing commands
 	glFlush();
 }
@@ -926,15 +945,17 @@ LRESULT CALLBACK WndProc(HWND    hWnd,
 			licznik++;
 			if (licznik < 15)
 			{
-				rot1 += 10.0;
-				rot2 += 15.0;
-				rot3 += 13.0;
+				rot1 += 3.0;
+				rot2 -= 5.0;
+				rot3 += 4.0;
+				rotConst += 3.0;
 			}
 			if (licznik > 15 && licznik < 30)
 			{
-				rot1 -= 10.0;
-				rot2 -= 15.0;
-				rot3 -= 13.0;
+				rot1 -= 3.0;
+				rot2 += 5.0;
+				rot3 -= 4.0;
+				rotConst += 3.0;
 			}
 			if (licznik > 30)
 				licznik = 0;

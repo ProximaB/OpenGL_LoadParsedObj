@@ -5,12 +5,16 @@ c:\users\barte\desktop\gl_template1\gl_template.cpp(292): warning C4996: 'fopen'
 c:\users\barte\desktop\gl_template1\gl_template.cpp(600): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 c:\users\barte\desktop\gl_template1\gl_template.cpp(612): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 c:\users\barte\desktop\gl_template1\gl_template.cpp(620): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\barte\desktop\gl_template1\gl_template.cpp(667): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\barte\desktop\gl_template1\gl_template.cpp(668): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\barte\desktop\gl_template1\gl_template.cpp(672): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\barte\desktop\gl_template1\gl_template.cpp(678): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\barte\desktop\gl_template1\gl_template.cpp(684): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\barte\desktop\gl_template1\gl_template.cpp(690): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\barte\desktop\gl_template1\gl_template.cpp(1100): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\barte\desktop\gl_template1\gl_template.cpp(1101): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(671): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(674): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(681): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(687): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(693): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(724): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(725): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(729): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(733): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(737): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(1121): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(1122): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
   Gl_Template1.vcxproj -> C:\Users\barte\Desktop\Gl_Template1\.\Debug\Gl_Template1.exe

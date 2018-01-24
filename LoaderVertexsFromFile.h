@@ -24,4 +24,6 @@ private:
 	int sizeofIndicies;
 	std::vector < float > Vertices;
 	std::vector < int > Indicies;
+	void calcNormal(float v[3][3], float out[3]);
+	void ReduceToUnit(float vector[3]);
 };
