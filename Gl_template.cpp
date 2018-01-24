@@ -35,7 +35,7 @@ BITMAPINFOHEADER    bitmapInfoHeader;   // nag³ówek obrazu
 unsigned char*      bitmapData;         // dane tekstury
 unsigned int        texture[2];         // obiekt tekstury
 
-double rot1, rot2, rot3, rotConst;
+double rot1, rot2, rot3, rotConst, rat1, rat2, rat3, rat4, rat5;
 
 
 // Declaration for Window procedure
@@ -628,8 +628,8 @@ void robot(double d1, double d2, double d3)
 ///////////////////////////////////////// Create Instance Of Objects //////////////////////////////////////////////////
 
 DemoLoadVertexsFromArray_1 LoadFromArray = DemoLoadVertexsFromArray_1();
-LoadervertexsFromFile verLoader = LoadervertexsFromFile("Vertex.txt", 24, "Faces.txt", 36 );
-LoadervertexsFromFile verLoader2 = LoadervertexsFromFile("VertexBlender.txt", 24,  "FacesBlender.txt", 36);
+LoadervertexsFromFile verLoader = LoadervertexsFromFile("Vertex.txt", 24, "Faces.txt", 36);
+LoadervertexsFromFile verLoader2 = LoadervertexsFromFile("VertexBlender.txt", 24, "FacesBlender.txt", 36);
 LoadervertexsFromFile ROBOT1 = LoadervertexsFromFile("ROBOT1Vertex.txt", 1419, "ROBOT1Faces.txt", 3042);
 LoadervertexsFromFile ROBOT2 = LoadervertexsFromFile("ROBOT2Vertex.txt", 606, "ROBOT2Faces.txt", 1236);
 LoadervertexsFromFile ROBOT3 = LoadervertexsFromFile("ROBOT3Vertex.txt", 216, "ROBOT3Faces.txt", 420);
@@ -651,10 +651,10 @@ void RenderScene(void)
 
 	// Save the matrix state and do the rotations
 	glPushMatrix();
-		glTranslated(0, -5, 0);
-		glRotatef(xRot, 1.0f, 0.0f, 0.0f);
-		glRotatef(yRot, 0.0f, 1.0f, 0.0f);
-	
+	glTranslated(0, -5, 0);
+	glRotatef(xRot, 1.0f, 0.0f, 0.0f);
+	glRotatef(yRot, 0.0f, 1.0f, 0.0f);
+
 	/////////////////////////////////////////////////////////////////
 	// MIEJSCE NA KOD OPENGL DO TWORZENIA WLASNYCH SCEN:           //
 	/////////////////////////////////////////////////////////////////
@@ -667,31 +667,31 @@ void RenderScene(void)
 	glRotated(35, 0, 0, 0);
 
 	glPushMatrix();
-		glTranslated(-5, 4.0f, -2.0f);
-		glRotatef(rotConst, 0.0f, 0.5f, 0.5f);
-		glPushMatrix();
-			glTranslated(-5, 2, 2);
-			glRotatef(rot1, 0.0f, 0.0f, 0.5f);
-			LoadFromArray.LoadType1();
-		glPopMatrix();
+	glTranslated(-2, 4.0f, -2.0f);
+	glRotatef(rotConst, 0.0f, 0.5f, 0.5f);
+	glPushMatrix();
+	glTranslated(-5, 2, 2);
+	glRotatef(rot1, 0.0f, 0.0f, 0.5f);
+	LoadFromArray.LoadType1();
+	glPopMatrix();
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslated(5, -4, -3);
-		glRotatef(rot3, 0.0f, 0.0f, 0.5f);
-		LoadFromArray.LoadType2();
+	glTranslated(1, -3, -4);
+	glRotatef(rot3, 0.0f, 0.0f, 0.5f);
+	//LoadFromArray.LoadType2();
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslated(0, -4, -4);
-		glRotatef(rot1, 0.0f, 0.0f, 0.5f);
-		verLoader.Draw();
+	glTranslated(0, 2, 5);
+	glRotatef(rot1, 0.0f, 0.0f, 0.5f);
+	//verLoader.Draw();
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslated(0, 4, 4);
+	glTranslated(2, 4, 3);
 	glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-	verLoader2.Draw();
+	//verLoader2.Draw();
 	glPopMatrix();
 
 	///////////////////////////////////////////////////////////ROBOT
@@ -722,24 +722,28 @@ void RenderScene(void)
 
 	ZROBOT0.Draw();
 	glTranslatef(0, 0.3, 0);
-	glRotatef(rotConst, 0, 1, 0);
+	glRotatef(rat1, 0, 1, 0);
 	/////////////////////////////// OBROT  Y
 	ZROBOT1.Draw();
 
 	glTranslatef(+1.4, 1.8, 0);
 	glRotatef(-40, 0, 0, 1); //ROtacja X
+	glRotatef(rat2, 0, 0, 1); //ROtacja X
 	ZROBOT2.Draw();
 
-	glTranslatef(-5.9, 0.1, 1);
-	glRotatef(+40, 0, 0, 1); //ROtacja X
+	glTranslatef(-5.9, 0.1, 0.8);
+	glRotatef(+40, 0, 0, 1); 
+	glRotatef(rat3, 0, 0, 1); //ROtacja Z
 	ZROBOT3.Draw();
 
-	glTranslatef(+4.2, 0.8, -1.3);
-	glRotatef(+40, 1, 0, 0); //ROtacja X
+	glTranslatef(+4.2, 0, 0);
+	glRotatef(+0, 1, 0, 0); 
+	glRotatef(rat4, 1, 0, 0); //ROtacja X
 	ZROBOT4.Draw();
 
-	glTranslated(2.5, 0, 1.3);
-	glRotated(90, 0, 0, 1); //Rotacja X
+	glTranslated(2.5, 0, 0);
+	glRotated(90, 0, 0, 1); 
+	glRotatef(rat5, 0, 0, 1); //ROtacja Z
 	ZROBOT5.Draw();
 
 	glPopMatrix();
@@ -1122,19 +1126,25 @@ LRESULT CALLBACK WndProc(HWND    hWnd,
 		yRot = (const int)yRot % 360;
 
 		if (wParam == '1')
-			rot1 -= 5.0f;
+			rat1 -= 2.0f;
 		if (wParam == '2')
-			rot1 += 5.0f;
-
-		if (wParam == '3')
-			rot2 -= 5.0f;
-		if (wParam == '4')
-
-			rot2 += 5.0f;
-		if (wParam == '5')
-			rot3 -= 5.0f;
-		if (wParam == '6')
-			rot3 += 5.0f;
+			rat1 += 2.0f;
+		if (wParam == 'Q')
+			rat2 -= 2.0f;
+		if (wParam == 'W')
+			rat2 += 2.0f;
+		if (wParam == 'A')
+			rat3 -= 2.0f;
+		if (wParam == 'S')
+			rat3 += 2.0f;
+		if (wParam == 'Z')
+			rat4 -= 2.0f;
+		if (wParam == 'X')
+			rat4 += 2.0f;
+		if (wParam == 'C')
+			rat5 -= 2.0f;
+		if (wParam == 'V')
+			rat5 += 2.0f;
 
 		InvalidateRect(hWnd, NULL, FALSE);
 	}

@@ -13,8 +13,12 @@ c:\users\barte\desktop\gl_template1\gl_template.cpp(693): warning C4244: 'argume
 c:\users\barte\desktop\gl_template1\gl_template.cpp(724): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 c:\users\barte\desktop\gl_template1\gl_template.cpp(725): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 c:\users\barte\desktop\gl_template1\gl_template.cpp(729): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\barte\desktop\gl_template1\gl_template.cpp(733): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\barte\desktop\gl_template1\gl_template.cpp(737): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\barte\desktop\gl_template1\gl_template.cpp(1121): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\barte\desktop\gl_template1\gl_template.cpp(1122): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(731): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(734): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(736): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(739): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(741): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(746): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(1125): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(1126): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
   Gl_Template1.vcxproj -> C:\Users\barte\Desktop\Gl_Template1\.\Debug\Gl_Template1.exe
