@@ -36,7 +36,7 @@ unsigned char*      bitmapData;         // dane tekstury
 unsigned int        texture[2];         // obiekt tekstury
 
 double rot1, rot2, rot3, rotConst, rat1, rat2, rat3, rat4, rat5;
-
+bool autoRun = 0;
 
 // Declaration for Window procedure
 LRESULT CALLBACK WndProc(HWND    hWnd,
@@ -953,15 +953,55 @@ LRESULT CALLBACK WndProc(HWND    hWnd,
 				rot2 -= 5.0;
 				rot3 += 4.0;
 				rotConst += 3.0;
+				if (autoRun == 1)
+				{
+
+					rat1 += 3.0;
+					rat2 -= 1.0;
+					rat3 += 3.0;
+
+				}
 			}
 			if (licznik > 15 && licznik < 30)
 			{
+				if (autoRun == 1)
+				{
+					rat2 += 2.0;
+					rat3 -= 1.0;
+					rat4 -= 5.0;
+					rat5 += 4.0;
+
+				}
+			}
+			if (licznik > 30 && licznik < 45)
+			{
+				if (autoRun == 1)
+				{
+					rat2 -= 2.0;
+					rat3 += 1.0;
+					rat4 += 3.0;
+					rat5 -= 4.0;
+
+
+				}
+			}
+			if (licznik > 45 && licznik < 60)
+			{
 				rot1 -= 3.0;
-				rot2 += 5.0;
+				rot2 += 3.0;
 				rot3 -= 4.0;
 				rotConst += 3.0;
+
+				if (autoRun == 1)
+				{
+
+					rat1 -= 3.0;
+					rat2 += 1.0;
+					rat3 -= 3.0;
+
+				}
 			}
-			if (licznik > 30)
+			if (licznik > 60)
 				licznik = 0;
 			InvalidateRect(hWnd, NULL, FALSE);
 		}
@@ -1145,6 +1185,14 @@ LRESULT CALLBACK WndProc(HWND    hWnd,
 			rat5 -= 2.0f;
 		if (wParam == 'V')
 			rat5 += 2.0f;
+
+		if (wParam == 'B')
+		{
+			if(autoRun == 0)
+			autoRun = 1;
+			else
+			autoRun = 0;
+		}
 
 		InvalidateRect(hWnd, NULL, FALSE);
 	}
