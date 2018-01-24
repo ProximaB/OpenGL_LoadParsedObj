@@ -163,6 +163,16 @@
   <ItemGroup>
     <Text Include="Faces.txt" />
     <Text Include="FacesBlender.txt" />
+    <Text Include="ROBOT1Faces.txt" />
+    <Text Include="ROBOT1Vertex.txt" />
+    <Text Include="ROBOT2Faces.txt" />
+    <Text Include="ROBOT2Vertex.txt" />
+    <Text Include="ROBOT3Faces.txt" />
+    <Text Include="ROBOT3Vertex.txt" />
+    <Text Include="ROBOT4Faces.txt" />
+    <Text Include="ROBOT4Vertex.txt" />
+    <Text Include="ROBOT5Faces.txt" />
+    <Text Include="ROBOT5Vertex.txt" />
     <Text Include="Vertex.txt" />
     <Text Include="VertexBlender.txt" />
   </ItemGroup>

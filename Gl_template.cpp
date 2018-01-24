@@ -630,7 +630,16 @@ void robot(double d1, double d2, double d3)
 DemoLoadVertexsFromArray_1 LoadFromArray = DemoLoadVertexsFromArray_1();
 LoadervertexsFromFile verLoader = LoadervertexsFromFile("Vertex.txt", 24, "Faces.txt", 36 );
 LoadervertexsFromFile verLoader2 = LoadervertexsFromFile("VertexBlender.txt", 24,  "FacesBlender.txt", 36);
-LoadervertexsFromFile verLoader3 = LoadervertexsFromFile("VertexBlender.txt", 24, "FacesBlender.txt", 36);
+LoadervertexsFromFile ROBOT1 = LoadervertexsFromFile("ROBOT1Vertex.txt", 1419, "ROBOT1Faces.txt", 3042);
+LoadervertexsFromFile ROBOT2 = LoadervertexsFromFile("ROBOT2Vertex.txt", 606, "ROBOT2Faces.txt", 1236);
+LoadervertexsFromFile ROBOT3 = LoadervertexsFromFile("ROBOT3Vertex.txt", 216, "ROBOT3Faces.txt", 420);
+LoadervertexsFromFile ROBOT4 = LoadervertexsFromFile("ROBOT4Vertex.txt", 333, "ROBOT4Faces.txt", 654);
+LoadervertexsFromFile ROBOT5 = LoadervertexsFromFile("ROBOT5Vertex.txt", 573, "ROBOT5Faces.txt", 1074);
+
+
+
+
+
 
 
 // Called to draw scene
@@ -682,10 +691,35 @@ void RenderScene(void)
 	verLoader2.Draw();
 	glPopMatrix();
 
+	/////////////////////////////////////////////////ROBOT
 	glPushMatrix();
 	glTranslated(-3, -2, -1);
-	glRotatef(rot2, 0.0f, 0.0f, 0.5f);
-	verLoader3.Draw();
+	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+	ROBOT1.Draw();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(-3, -2, -1);
+	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+	ROBOT2.Draw();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(-3, -2, -1);
+	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+	ROBOT3.Draw();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(-3, -2, -1);
+	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+	ROBOT4.Draw();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(-3, -2, -1);
+	//glRotatef(rot2, 0.0f, 0.0f, 0.5f);
+	ROBOT5.Draw();
 	glPopMatrix();
 
 	/////////////////////////////////////////////////////////////////
