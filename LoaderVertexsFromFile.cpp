@@ -57,7 +57,7 @@ LoadervertexsFromFile::~LoadervertexsFromFile()
 }
 
 
-void LoadervertexsFromFile::Draw() {
+void LoadervertexsFromFile::Draw(GLdouble red, GLdouble green, GLdouble blue) {
 
 	//GLint rozmiar = sizeof(Indicies) / sizeof(*Indicies);
 	float norm[3];
@@ -69,6 +69,8 @@ void LoadervertexsFromFile::Draw() {
 		float v [3][3] = { Vertices[(Indicies[i] - 1) * 3], Vertices[(Indicies[i] - 1) * 3 + 1], Vertices[(Indicies[i] - 1) * 3 + 2]};
 		calcNormal(v, norm);
 		glNormal3d(norm[0], norm[1], norm[2]);
+		
+		glColor3d(red, green, blue);
 	}
 	glEnd();
 }

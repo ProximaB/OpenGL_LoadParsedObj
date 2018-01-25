@@ -724,27 +724,27 @@ void RenderScene(void)
 	glTranslatef(0, 0.3, 0);
 	glRotatef(rat1, 0, 1, 0);
 	/////////////////////////////// OBROT  Y
-	ZROBOT1.Draw();
+	ZROBOT1.Draw(0.1,0.2, 0.7);
 
 	glTranslatef(+1.4, 1.8, 0);
 	glRotatef(-40, 0, 0, 1); //ROtacja X
 	glRotatef(rat2, 0, 0, 1); //ROtacja X
-	ZROBOT2.Draw();
+	ZROBOT2.Draw(0.7, 0.2, 0.71);
 
 	glTranslatef(-5.9, 0.1, 0.8);
 	glRotatef(+40, 0, 0, 1); 
 	glRotatef(rat3, 0, 0, 1); //ROtacja Z
-	ZROBOT3.Draw();
+	ZROBOT3.Draw(0.8,0.81, 0.10);
 
 	glTranslatef(+4.2, 0, 0);
 	glRotatef(+0, 1, 0, 0); 
 	glRotatef(rat4, 1, 0, 0); //ROtacja X
-	ZROBOT4.Draw();
+	ZROBOT4.Draw(0.1, 0.7, 0.2);
 
 	glTranslated(2.5, 0, 0);
 	glRotated(90, 0, 0, 1); 
 	glRotatef(rat5, 0, 0, 1); //ROtacja Z
-	ZROBOT5.Draw();
+	ZROBOT5.Draw(0.1, 0.2, 0.5);
 
 	glPopMatrix();
 	/////////////////////////////////////////////////////////////////

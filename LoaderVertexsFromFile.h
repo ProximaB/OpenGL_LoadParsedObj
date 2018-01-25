@@ -14,7 +14,7 @@ class LoadervertexsFromFile
 public:
 	LoadervertexsFromFile( char* _pathForVertices, int _sizeOfVertices, char* _pathForIndicies, int _sizeofIndicies);
 	~LoadervertexsFromFile();
-	void Draw();
+	void Draw(GLdouble red = 0, GLdouble green = 0, GLdouble blue = 0);
 	
 
 private:

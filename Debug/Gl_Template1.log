@@ -1,2 +1,24 @@
-﻿DemoLoadVertexsFromArray_1.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+﻿  Gl_template.cpp
+c:\users\barte\desktop\gl_template1\gl_template.cpp(334): warning C4018: '<': signed/unsigned mismatch
+c:\users\barte\desktop\gl_template1\gl_template.cpp(292): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(600): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(612): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(620): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(671): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(674): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(681): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(687): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(693): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(724): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(725): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(729): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(731): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(734): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(736): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(739): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\barte\desktop\gl_template1\gl_template.cpp(741): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(746): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(1165): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\barte\desktop\gl_template1\gl_template.cpp(1166): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
   Gl_Template1.vcxproj -> C:\Users\barte\Desktop\Gl_Template1\.\Debug\Gl_Template1.exe
