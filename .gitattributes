@@ -53,6 +53,7 @@
 *.app binary
 
 *.htm binary
+*.html binary
 *.sln        text eol=crlf
 *.csproj     text eol=crlf
 *.vbproj     text eol=crlf
