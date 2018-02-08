@@ -14,7 +14,7 @@
 # intervention with every merge. To do so, just comment the entries below and
 # uncomment the group further below
 ###############################################################################
-
+*.htm        text eol=crlf
 *.sln        text eol=crlf
 *.csproj     text eol=crlf
 *.vbproj     text eol=crlf
