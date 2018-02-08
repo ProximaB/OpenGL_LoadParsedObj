@@ -54,6 +54,8 @@
 
 *.htm binary
 *.html binary
+#*.html       merge=binary
+#*.htm       merge=binary
 *.sln        text eol=crlf
 *.csproj     text eol=crlf
 *.vbproj     text eol=crlf
